@@ -7,7 +7,7 @@ from .forms import ProductoForm
 
 
 def home(request):
-    return render(request, "templates\core/home.html")
+    return render(request, "core/home.html")
 
 
 def producto_tienda(request):
