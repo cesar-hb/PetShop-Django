@@ -56,7 +56,7 @@
 }
 
 
-.tienda_auto_recuadro {
+.tienda_producto_recuadro {
     width: 250px;
     text-align: center;
     padding: 5px;
@@ -65,13 +65,13 @@
 }
 
 
-.tienda_auto_imagen {
+.tienda_producto_imagen {
     width: 200px;
     margin:auto;
 }
 
 
-.tienda_auto_recuadro_interior {
+.tienda_producto_recuadro_interior {
     width: 205px;
     height: 155px;
     /* border:1px solid blue; */
@@ -85,13 +85,13 @@
 }
 
 
-.ficha_auto_recuadro {
+.ficha_producto_recuadro {
     padding:10px;
     border: 5px outset #1C6EA4;
 }
 
 
-.ficha_auto_imagen {
+.ficha_producto_imagen {
     width: 100%;
     margin:auto;
 }
