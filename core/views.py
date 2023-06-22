@@ -60,13 +60,12 @@ def producto(request, action, id):
 
 def poblar_bd(request):
     Producto.objects.all().delete()
-    Producto.objects.create(id="0001", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$10.000', descuento_sub='5%', descuento_oferta='10%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=1))
-    Producto.objects.create(id="0002", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$13.500', descuento_sub='5%', descuento_oferta='5%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(id="0003", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$15.000', descuento_sub='5%', descuento_oferta='17%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=3))
-    Producto.objects.create(id="0004", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$9.000', descuento_sub='5%', descuento_oferta='22%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=1))
-    Producto.objects.create(id="0005", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$8.500', descuento_sub='5%', descuento_oferta='30%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=2))
-    Producto.objects.create(id="0006", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$15.500', descuento_sub='5%', descuento_oferta='8%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=3))
-    Producto.objects.create(id="0007", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$12.000', descuento_sub='5%', descuento_oferta='15%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=1))
-    Producto.objects.create(id="0008", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$8.000', descuento_sub='5%', descuento_oferta='21%', imagen="images/dogChow18KG", categoria=Categoria.objects.get(idCategoria=2))
-    
+    Producto.objects.create(id="0001", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$10.000', descuento_sub='5%', descuento_oferta='10%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=1))
+    Producto.objects.create(id="0002", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$13.500', descuento_sub='5%', descuento_oferta='5%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(id="0003", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$15.000', descuento_sub='5%', descuento_oferta='17%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=3))
+    Producto.objects.create(id="0004", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$9.000', descuento_sub='5%', descuento_oferta='22%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=1))
+    Producto.objects.create(id="0005", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$8.500', descuento_sub='5%', descuento_oferta='30%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=2))
+    Producto.objects.create(id="0006", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$15.500', descuento_sub='5%', descuento_oferta='8%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=3))
+    Producto.objects.create(id="0007", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$12.000', descuento_sub='5%', descuento_oferta='15%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=1))
+    Producto.objects.create(id="0008", nombre='Dog Chow', descripcion="Dog Chow adulto", precio='$8.000', descuento_sub='5%', descuento_oferta='21%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=2))
     return redirect(Producto, action='ins', id = '-1')

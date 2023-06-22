@@ -50,50 +50,12 @@
           </section>
         </div>
     </main>
-    <br><br><br>
-    <div class="container-fluid pad">
-      <div class="row ">
-        <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 pad-b">
-          <img class="producto" src="img/Masterdog.jpg" alt="">
-          <br>
-          <p>DISPONIBLE</p>
-          <p class="fs-5">$23.990</p> 
-          <p>Saco de alimento Master Dog <br>
-          Descripción: <br>
-          Master Dog, 18kg, savor carne, adulto <br>
-          En stock 3 unidades</p> 
-        </div>
-        <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 pad-b">
-          <img class="producto" src="img/dogChow18KG.jpg" alt="">
-          <br>
-          <p>DISPONIBLE </p>
-          <p class="fs-5">$24.460</p>
-          <p>Saco de alimento Dog Chow <br>
-          Descripción: <br>
-          Dog Chow, 18kg, savor carne y pollo, adulto <br>
-          En stock 6 unidades</p> 
-        </div>
-        <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 pad-b">
-          <img class="producto" src="img/cannes-carne-18.jpg" alt="">
-          <br>
-          <p class="oferta">EN OFERTA </p>
-          <p class="fs-5"><a class="text-decoration-line-through">$32.000</a> $30.000</p>
-          <p>Saco de alimento Cannes <br>
-          Descripción: <br>
-          Cannes, 18kg, savor carnes y cereales, adulto <br>
-          En stock 5 unidades</p> 
-        </div>
-        <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3 pad-b">
-          <img class="producto" src="img/pedigree_adulto_15kg.jpeg" alt="">
-          <br>
-          <p>DISPONIBLE</p>
-          <p class="fs-5">$22.000 </p>
-          <p>Saco de alimento Pedegree <br>
-          Descripción: <br>
-          Pedegree, 15kg, savor carne, pollo y cereales, adulto <br>
-          En stock 1 unidades</p> 
-        </div>
-      </div>
+    <div style="margin-top: 30px;">
+      <a class="btn btn-primary" href="{% url 'producto' 'ins' -1 %}">Mantener productos de la tienda</a>
+    </div>
+    <div style="margin-top: 30px;">
+      <a class="btn btn-primary" href="{% url 'producto_tienda' %}">Entrar a la tienda</a>
+    </div>
 
       <br><br><br>
       <div class="card mb-3" style="max-width: 540px;">
