@@ -14,7 +14,7 @@ def __str__(self):
 # Create Modelo para producto
 
 class Producto(models.Model):
-    id = models.CharField(max_length=4, primary_key=True, verbose_name="ID")
+    id = models.IntegerField(primary_key=True, verbose_name="ID")
     nombre = models.CharField(max_length=80, blank=False, null=False, verbose_name="Nombre")
     descripcion = models.CharField(max_length=200, null=True, blank=True, verbose_name="Descripción")
     precio = models.CharField(max_length=10, blank=False, null=False, verbose_name="Precio")

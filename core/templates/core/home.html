@@ -13,11 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'core/css/styles.css'%}">
+    <script src="{% static 'core/js/cargarcontenido.js'%}"></script>
     <title>PetShop</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-div">
-  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-div"></nav>
   <br>
   <div class="container-fluid text-center"><h1>Comercializadora PetShop</h1></div>
   <br>
@@ -56,7 +56,7 @@
     <div style="margin-top: 30px;">
       <a class="btn btn-primary" href="{% url 'producto_tienda' %}">Entrar a la tienda</a>
     </div>
-    
+
       <br><br><br>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
@@ -82,9 +82,5 @@
 
   </footer>
 
-    <!-- Bootstrap y Popper (deben ir al final del body)-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
-    <script src="{% static 'core/js/cargarcontenido.js'%}"></script>
 </body>
 </html>
