@@ -1,55 +1,37 @@
+{% extends 'core/base.html' %}
 {%load static%}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap 5 stylesheet-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'core/css/styles.css'%}">
-    <script src="{% static 'core/js/cargarcontenido.js'%}"></script>
-    <title>PetShop</title>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-div"></nav>
-  <br>
-  <div class="container-fluid text-center"><h1>Comercializadora PetShop</h1></div>
-  <br>
-      <!-- carrousel -->
-    <main role="main">
-        <div class="container">
-          <section class="text-center">
-            <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/media/images/royalmedium2-scaled.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/media/images/bannerdespachogratis-scaled.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/media/images/MARZOALRESCATE-scaled.jpg" class="d-block w-100" alt="...">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </section>
-        </div>
-    </main>
-      <!-- carrousel-->
+{% block content %} 
+<div class="container-fluid text-center"><h1>Comercializadora PetShop</h1></div>
+<br>
+<!-- carrousel -->
+<main role="main">
+  <div class="container">
+      <section class="text-center">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/media/images/royalmedium2-scaled.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/media/images/bannerdespachogratis-scaled.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/media/images/MARZOALRESCATE-scaled.jpg" class="d-block w-100" alt="...">
+          </div>
+          </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </section>
+    </div>
+</main>
+<!-- carrousel-->
     <div style="margin-top: 30px;">
       <a class="btn btn-primary" href="{% url 'producto' 'ins' -1 %}">Mantener productos de la tienda</a>
     </div>
@@ -77,10 +59,4 @@
       <div>
         <br><br><br><br><br><br>
       </div>
-
-  <footer id="footer">
-
-  </footer>
-
-</body>
-</html>
+{% endblock %}
