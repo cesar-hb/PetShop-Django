@@ -1,7 +1,12 @@
 from django.shortcuts import redirect, render
 from .models import Producto, Categoria
-from .forms import ProductoForm
-
+from .forms import ProductoForm, IniciarSesionForm, RegistroForm
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
+from django.contrib.auth import login, logout, authenticate
 
 # Create your views here.
 
@@ -9,7 +14,35 @@ from .forms import ProductoForm
 def home(request):
     return render(request, "core/home.html")
 
+def iniciar_sesion(request):
+    data = {"mesg": "", "form": IniciarSesionForm()}
 
+    if request.method == "POST":
+        form = IniciarSesionForm(request.POST)
+        if form.is_valid:
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect(home)
+                else:
+                    data["mesg"] = "¡La cuenta o la password no son correctos!"
+            else:
+                data["mesg"] = "¡La cuenta o la password no son correctos!"
+    return render(request, "core/iniciar_sesion.html", data)
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect(home)
+
+class registrar_usuario(CreateView):
+    model = User
+    template_name = "core/registrar_usuario.html"
+    form_class = RegistroForm
+    success_url = reverse_lazy('iniciar_sesion')
+       
 def producto_tienda(request):
     data = {"list": Producto.objects.all().order_by('id')}
     return render(request, "core/producto_tienda.html", data)
