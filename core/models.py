@@ -9,7 +9,7 @@ class Categoria(models.Model):
     nombreCategoria = models.CharField(max_length=80, blank=False, null=False, verbose_name="Nombre de la categoría")
 
 def __str__(self):
-    return self.nombreCategoria
+    return f"{self.idCategoria} - {self.nombreCategoria}"
 
 # Create Modelo para producto
 
