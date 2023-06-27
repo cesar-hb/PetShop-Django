@@ -91,6 +91,9 @@ def producto(request, action, id):
     data["list"] = Producto.objects.all().order_by('id')
     return render(request, "core/producto.html", data)
 
+def ropa(request):
+    return render(request, "core/ropa.html")
+
 def poblar_bd(request):
     Producto.objects.all().delete()
     Producto.objects.create(id="0001", nombre='Dog Chow', descripcion="Bolsa 18kg, carne y pollo, adulto", precio='$20.600', descuento_sub='5%', descuento_oferta='10%', imagen="/images/dogChow18KG.jpg", categoria=Categoria.objects.get(idCategoria=1))
