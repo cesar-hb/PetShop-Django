@@ -1,3 +1,11 @@
+.navbar-brand{
+    width: 100px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
 #formulario label {
     width: 150px;
 }
