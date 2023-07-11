@@ -14,6 +14,8 @@ from django.contrib.auth import login, logout, authenticate
 def home(request):
     return render(request, "core/home.html")
 
+def nosotros(request):
+    return render(request, "core/Nosotros.html")
 def iniciar_sesion(request):
     data = {"mesg": "", "form": IniciarSesionForm()}
 
@@ -42,7 +44,54 @@ class registrar_usuario(CreateView):
     template_name = "core/registrar_usuario.html"
     form_class = RegistroForm
     success_url = reverse_lazy('iniciar_sesion')
-       
+
+def datos_usuario(request):
+    return render(request, 'core/datos_usuario.html')
+
+def administrar(request):
+    return render(request, 'core/administrar.html')
+def admin_users(request):
+    return render(request, 'core/admin_users.html')
+
+def admin_bodega(request, action, id):
+    data = {"mesg": "", "form": ProductoForm, "action": action, "id": id}
+
+
+    if action == 'ins':
+        if request.method == "POST":
+            form = ProductoForm(request.POST, request.FILES)
+            if form.is_valid:
+                try:
+                    form.save()
+                    data["mesg"] = "¡El producto fue creado correctamente!"
+                except:
+                    data["mesg"] = "¡No se puede crear dos productos con la misma ID!"
+
+
+    elif action == 'upd':
+        objeto = Producto.objects.get(id=id)
+        if request.method == "POST":
+            form = ProductoForm(data=request.POST, files=request.FILES, instance=objeto)
+            if form.is_valid:
+                form.save()
+                data["mesg"] = "¡El producto fue actualizado correctamente!"
+        data["form"] = ProductoForm(instance=objeto)
+
+
+    elif action == 'del':
+        try:
+            Producto.objects.get(id=id).delete()
+            data["mesg"] = "¡El producto fue eliminado correctamente!"
+            return redirect(producto, action='ins', id = '-1')
+        except:
+            data["mesg"] = "¡El producto ya estaba eliminado!"
+
+
+    data["list"] = Producto.objects.all().order_by('id')
+    return render(request, "core/admin_bodega.html", data)
+
+
+
 def producto_tienda(request):
     data = {"list": Producto.objects.all().order_by('id')}
     return render(request, "core/producto_tienda.html", data)

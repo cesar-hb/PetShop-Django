@@ -8,12 +8,16 @@
 {% block content %}
     <div class="container text-center">
         <h1>Registrar Usuario</h1>
-        <div class="content container">
-            <form method="POST">
-                {% csrf_token %} {{ form.as_p }}
-                <button type="submit">Registrar</button>
-            </form>
-        </div>
-
+        <form method="POST" enctype="multipart/form-data" id="form">
+            <div class="content container">
+                <form method="POST">
+                    {% csrf_token %} {{ form.as_p }}
+                    <button class="btn btn-primary" type="submit">Registrar</button>
+                </form>
+            </div>
+        </form>
     </div>
-{% endblock content %}
+{% endblock content %} 
+{% block script %}
+  <script src="{% static 'core/js/registrarme.js' %}"></script>
+{% endblock script %}

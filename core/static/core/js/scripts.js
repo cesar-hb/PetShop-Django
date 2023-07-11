@@ -3,16 +3,24 @@
 
 $(document).ready(function() {
   $('#navbar-div').empty();
-  var contenido = `<img class="navbar-brand" src="img/cropped-logo-max-comercializadora.png">
+  var contenido = `<img class="navbar-brand" src="/media/images/cropped-logo-max-comercializadora.png">
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
+      <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+      <a class="nav-link" href="{% url 'producto_tienda' %}">Tienda</a>
+      {% if user.is_authenticated and user.is_staff %}
+        <a class="nav-link" href="{% url 'producto' 'ins' '-1' %}" tabindex="-1">Administrar</a>
+        <a class="nav-link" href="{% url 'admin:index' %}">Administrar sistema</a>
+      {% endif %}
       <a class="nav-link" href="nosotros.html">Nosotros</a>
-      <a class="nav-link" href="registro.html">Registrarse</a>
-      <a class="nav-link" href="ingreso.html" tabindex="-1">Ingreso</a>
+      <a class="nav-link" href="{% url 'registrar_usuario' %}">Registrarse</a>
+      <a class="nav-link" href="{% url 'iniciar_sesion' %}" tabindex="-1">Ingreso</a>
+      <a class="nav-link" href="{% url 'cerrar_sesion' %}" tabindex="-1">Cerrar Sesion
+        <span class="ml-md-5" style="color: blue;">{{ user.get_full_name }}</span>
+      </a>
     </div>
   </div>`
   $('#navbar-div').append(contenido);
